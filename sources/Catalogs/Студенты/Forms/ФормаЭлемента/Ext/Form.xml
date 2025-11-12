@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ФормаГруппа1" id="31">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Анализ</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.Chart</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ФормаГруппа1РасширеннаяПодсказка" id="32"/>
+				<ChildItems>
+					<Button name="ФормаПровестиАнализ" id="27">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПровестиАнализ</CommandName>
+						<ExtendedTooltip name="ФормаПровестиАнализРасширеннаяПодсказка" id="28"/>
+					</Button>
+					<Button name="ФормаПровестиАнализПропусков" id="29">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПровестиАнализПропусков</CommandName>
+						<ExtendedTooltip name="ФормаПровестиАнализПропусковРасширеннаяПодсказка" id="30"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">НаименованиеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Группа1" id="19">
+			<ReadOnly>true</ReadOnly>
+			<HorizontalStretch>false</HorizontalStretch>
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			<Group>AlwaysHorizontal</Group>
+			<HorizontalAlign>Left</HorizontalAlign>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<LabelField name="Фамилия" id="7">
+					<DataPath>Объект.Фамилия</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>14</Width>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<ContextMenu name="ФамилияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ФамилияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+				<LabelField name="Имя" id="10">
+					<DataPath>Объект.Имя</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>9</Width>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<ContextMenu name="ИмяКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ИмяРасширеннаяПодсказка" id="12"/>
+				</LabelField>
+				<LabelField name="Отчество" id="13">
+					<DataPath>Объект.Отчество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>14</Width>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<ContextMenu name="ОтчествоКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ОтчествоРасширеннаяПодсказка" id="15"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Группа" id="16">
+			<DataPath>Объект.Группа</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ГруппаКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<CheckBoxField name="Староста" id="24">
+			<DataPath>Объект.Староста</DataPath>
+			<CheckBoxType>Switcher</CheckBoxType>
+			<ContextMenu name="СтаростаКонтекстноеМеню" id="25"/>
+			<ExtendedTooltip name="СтаростаРасширеннаяПодсказка" id="26"/>
+		</CheckBoxField>
+		<CheckBoxField name="Отчислен" id="21">
+			<DataPath>Объект.Отчислен</DataPath>
+			<CheckBoxType>Switcher</CheckBoxType>
+			<ContextMenu name="ОтчисленКонтекстноеМеню" id="22"/>
+			<ExtendedTooltip name="ОтчисленРасширеннаяПодсказка" id="23"/>
+		</CheckBoxField>
+		<UsualGroup name="Группа2" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время существования в системе</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="37"/>
+			<ChildItems>
+				<InputField name="ПринятВГруппу" id="38">
+					<DataPath>Объект.ПринятВГруппу</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПринятВГруппуКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ПринятВГруппуРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="УдаленИзГруппы" id="33">
+					<DataPath>Объект.УдаленИзГруппы</DataPath>
+					<TitleTextColor>#FF0000</TitleTextColor>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<TextColor>#FF0000</TextColor>
+					<Font ref="style:NormalTextFont" bold="true" italic="true" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<ContextMenu name="УдаленИзГруппыКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="УдаленИзГруппыРасширеннаяПодсказка" id="35"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Студенты</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПровестиАнализ" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общий анализ оценок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести анализ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПровестиАнализ</Action>
+		</Command>
+		<Command name="ПровестиАнализПропусков" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Совместные пропуски</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести анализ пропусков</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПровестиАнализПропусков</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.18">
+	<Item id="27047f48-e8e4-4a39-a50b-be21174c05c2">
+		<Name>Бухгалтер</Name>
+		<Code>000000002</Code>
+		<Description>Бухгалтер</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="a1c27071-4e32-4a61-8a78-3d2cdb7fe82e">
+		<Name>Директор</Name>
+		<Code>000000001</Code>
+		<Description>Директор</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="7630082c-d7e1-46dd-95c0-280a474410c7">
+		<Name>ЗаместительДиректора</Name>
+		<Code>000000003</Code>
+		<Description>Заместитель директора</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="ac44173d-12d7-4ce8-8ba7-1b43ba867d9e">
+		<Name>Куратор</Name>
+		<Code>000000005</Code>
+		<Description>Куратор</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="9c1a2760-1864-4310-a62b-9e655b52ab0c">
+		<Name>Преподаватель</Name>
+		<Code>000000004</Code>
+		<Description>Преподаватель</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>

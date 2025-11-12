@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="СокращенноеНаименование" id="7">
+			<DataPath>Объект.СокращенноеНаименование</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СокращенноеНаименованиеКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СокращенноеНаименованиеРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Pages name="Группа1" id="63">
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="64"/>
+			<ChildItems>
+				<Page name="Группа2" id="65">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подписанты</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="66"/>
+					<ChildItems>
+						<Table name="ПодписантыПоДокументам" id="10">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ПодписантыПоДокументам</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПодписантыПоДокументамКонтекстноеМеню" id="11"/>
+							<AutoCommandBar name="ПодписантыПоДокументамКоманднаяПанель" id="12"/>
+							<ExtendedTooltip name="ПодписантыПоДокументамРасширеннаяПодсказка" id="13"/>
+							<SearchStringAddition name="ПодписантыПоДокументамСтрокаПоиска" id="14">
+								<AdditionSource>
+									<Item>ПодписантыПоДокументам</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПодписантыПоДокументамСтрокаПоискаКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="ПодписантыПоДокументамСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПодписантыПоДокументамСостояниеПросмотра" id="17">
+								<AdditionSource>
+									<Item>ПодписантыПоДокументам</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПодписантыПоДокументамСостояниеПросмотраКонтекстноеМеню" id="18"/>
+								<ExtendedTooltip name="ПодписантыПоДокументамСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПодписантыПоДокументамУправлениеПоиском" id="20">
+								<AdditionSource>
+									<Item>ПодписантыПоДокументам</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПодписантыПоДокументамУправлениеПоискомКонтекстноеМеню" id="21"/>
+								<ExtendedTooltip name="ПодписантыПоДокументамУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeRowChange">ПодписантыПоДокументамПередНачаломИзменения</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПодписантыПоДокументамНомерСтроки" id="23">
+									<DataPath>Объект.ПодписантыПоДокументам.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПодписантыПоДокументамНомерСтрокиКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ПодписантыПоДокументамНомерСтрокиРасширеннаяПодсказка" id="25"/>
+								</LabelField>
+								<CheckBoxField name="ПодписантыПоДокументамТекущий" id="26">
+									<DataPath>Объект.ПодписантыПоДокументам.Текущий</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПодписантыПоДокументамТекущийКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ПодписантыПоДокументамТекущийРасширеннаяПодсказка" id="28"/>
+								</CheckBoxField>
+								<InputField name="ПодписантыПоДокументамФИО" id="29">
+									<DataPath>Объект.ПодписантыПоДокументам.ФИО</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПодписантыПоДокументамФИОКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ПодписантыПоДокументамФИОРасширеннаяПодсказка" id="31"/>
+								</InputField>
+								<InputField name="ПодписантыПоДокументамДолжность" id="32">
+									<DataPath>Объект.ПодписантыПоДокументам.Должность</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПодписантыПоДокументамДолжностьКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ПодписантыПоДокументамДолжностьРасширеннаяПодсказка" id="34"/>
+								</InputField>
+								<InputField name="ПодписантыПоДокументамПол" id="35">
+									<DataPath>Объект.ПодписантыПоДокументам.Пол</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПодписантыПоДокументамПолКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ПодписантыПоДокументамПолРасширеннаяПодсказка" id="37"/>
+								</InputField>
+								<InputField name="ПодписантыПоДокументамОтображениеВДокументах" id="38">
+									<DataPath>Объект.ПодписантыПоДокументам.ОтображениеВДокументах</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПодписантыПоДокументамОтображениеВДокументахКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ПодписантыПоДокументамОтображениеВДокументахРасширеннаяПодсказка" id="40"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Группа3" id="67">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стандартное время звонков</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="68"/>
+					<ChildItems>
+						<Table name="ВремяЗвонков" id="41">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ВремяЗвонков</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВремяЗвонковКонтекстноеМеню" id="42"/>
+							<AutoCommandBar name="ВремяЗвонковКоманднаяПанель" id="43"/>
+							<ExtendedTooltip name="ВремяЗвонковРасширеннаяПодсказка" id="44"/>
+							<SearchStringAddition name="ВремяЗвонковСтрокаПоиска" id="45">
+								<AdditionSource>
+									<Item>ВремяЗвонков</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВремяЗвонковСтрокаПоискаКонтекстноеМеню" id="46"/>
+								<ExtendedTooltip name="ВремяЗвонковСтрокаПоискаРасширеннаяПодсказка" id="47"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВремяЗвонковСостояниеПросмотра" id="48">
+								<AdditionSource>
+									<Item>ВремяЗвонков</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВремяЗвонковСостояниеПросмотраКонтекстноеМеню" id="49"/>
+								<ExtendedTooltip name="ВремяЗвонковСостояниеПросмотраРасширеннаяПодсказка" id="50"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВремяЗвонковУправлениеПоиском" id="51">
+								<AdditionSource>
+									<Item>ВремяЗвонков</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВремяЗвонковУправлениеПоискомКонтекстноеМеню" id="52"/>
+								<ExtendedTooltip name="ВремяЗвонковУправлениеПоискомРасширеннаяПодсказка" id="53"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ВремяЗвонковНомерПары" id="57">
+									<DataPath>Объект.ВремяЗвонков.НомерПары</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">2</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">3</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">4</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">5</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">6</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">7</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:decimal">8</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВремяЗвонковНомерПарыКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ВремяЗвонковНомерПарыРасширеннаяПодсказка" id="59"/>
+								</InputField>
+								<InputField name="ВремяЗвонковВремя" id="60">
+									<DataPath>Объект.ВремяЗвонков.Время</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ВремяЗвонковВремяКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="ВремяЗвонковВремяРасширеннаяПодсказка" id="62"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.НастройкиОрганизации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

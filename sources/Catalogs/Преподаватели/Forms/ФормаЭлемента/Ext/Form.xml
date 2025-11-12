@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<CheckBoxField name="Уволен" id="38">
+			<DataPath>Объект.Уволен</DataPath>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<CheckBoxType>Switcher</CheckBoxType>
+			<ContextMenu name="УволенКонтекстноеМеню" id="39"/>
+			<ExtendedTooltip name="УволенРасширеннаяПодсказка" id="40"/>
+		</CheckBoxField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">НаименованиеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Группа1" id="16">
+			<ReadOnly>true</ReadOnly>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="17"/>
+			<ChildItems>
+				<LabelField name="Фамилия" id="7">
+					<DataPath>Объект.Фамилия</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>14</Width>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<ContextMenu name="ФамилияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ФамилияРасширеннаяПодсказка" id="9"/>
+				</LabelField>
+				<LabelField name="Имя" id="10">
+					<DataPath>Объект.Имя</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>9</Width>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<ContextMenu name="ИмяКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ИмяРасширеннаяПодсказка" id="12"/>
+				</LabelField>
+				<LabelField name="Отчество" id="13">
+					<DataPath>Объект.Отчество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>14</Width>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<ContextMenu name="ОтчествоКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ОтчествоРасширеннаяПодсказка" id="15"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Должность" id="29">
+			<DataPath>Объект.Должность</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДолжностьКонтекстноеМеню" id="30"/>
+			<ExtendedTooltip name="ДолжностьРасширеннаяПодсказка" id="31"/>
+		</InputField>
+		<InputField name="ЦК" id="35">
+			<DataPath>Объект.ЦК</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цикловая комиссия (при наличии)</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ЦККонтекстноеМеню" id="36"/>
+			<ExtendedTooltip name="ЦКРасширеннаяПодсказка" id="37"/>
+		</InputField>
+		<InputField name="Пол" id="32">
+			<DataPath>Объект.Пол</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ПолКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="ПолРасширеннаяПодсказка" id="34"/>
+		</InputField>
+		<InputField name="Телефон" id="18">
+			<DataPath>Объект.Телефон</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ТелефонКонтекстноеМеню" id="19"/>
+			<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="20"/>
+		</InputField>
+		<UsualGroup name="Группа2" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<InputField name="ДолжностьНаДокументах" id="21">
+					<DataPath>1/0:9433c406-80ef-44da-b9ea-e55b7e9b332e</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДолжностьНаДокументахКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ДолжностьНаДокументахРасширеннаяПодсказка" id="23"/>
+				</InputField>
+				<InputField name="ПодписьНаДокументах" id="24">
+					<DataPath>1/0:5a8011d8-9b9c-4bc9-a853-da84c4334879</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПодписьНаДокументахКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ПодписьНаДокументахРасширеннаяПодсказка" id="26"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Преподаватели</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>
