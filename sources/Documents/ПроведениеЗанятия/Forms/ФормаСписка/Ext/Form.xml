@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<CommandBarLocation>None</CommandBarLocation>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Create</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+			</CommandSet>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeDeleteRow">СписокПередУдалением</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="ЕстьКомментарий" id="82">
+					<DataPath>Список.ЕстьКомментарий</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ValuesPicture>
+						<xr:Ref>StdPicture.Change</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="ЕстьКомментарийКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="ЕстьКомментарийРасширеннаяПодсказка" id="84"/>
+				</PictureField>
+				<PictureField name="ЕстьМатериалы" id="85">
+					<DataPath>Список.ЕстьМатериалы</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.ВосклицЗнак</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="ЕстьМатериалыКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="ЕстьМатериалыРасширеннаяПодсказка" id="87"/>
+				</PictureField>
+				<LabelField name="ДатаЗанятия" id="25">
+					<DataPath>Список.ДатаЗанятия</DataPath>
+					<ContextMenu name="ДатаЗанятияКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ДатаЗанятияРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="НомерПары" id="46">
+					<DataPath>Список.НомерПары</DataPath>
+					<ContextMenu name="НомерПарыКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="НомерПарыРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+				<LabelField name="Группа" id="19">
+					<DataPath>Список.Группа</DataPath>
+					<ContextMenu name="ГруппаКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<LabelField name="Предмет" id="52">
+					<DataPath>Список.Предмет</DataPath>
+					<ContextMenu name="ПредметКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<LabelField name="Тема" id="79">
+					<DataPath>Список.Тема</DataPath>
+					<ContextMenu name="ТемаКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="ТемаРасширеннаяПодсказка" id="81"/>
+				</LabelField>
+				<LabelField name="КтоЗаменял" id="37">
+					<DataPath>Список.КтоЗаменял</DataPath>
+					<ContextMenu name="КтоЗаменялКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="КтоЗаменялРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.ЕстьКомментарий</Field>
+				<Field>Список.ЕстьМатериалы</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументПроведениеЗанятия.Ссылка КАК Ссылка,
+	ДокументПроведениеЗанятия.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументПроведениеЗанятия.Номер КАК Номер,
+	ДокументПроведениеЗанятия.Дата КАК Дата,
+	ДокументПроведениеЗанятия.Проведен КАК Проведен,
+	ДокументПроведениеЗанятия.НазваниеПары КАК НазваниеПары,
+	ДокументПроведениеЗанятия.Тема КАК Тема,
+	ДокументПроведениеЗанятия.ДЗ КАК ДЗ,
+	ДокументПроведениеЗанятия.Группа КАК Группа,
+	ДокументПроведениеЗанятия.НомерПары КАК НомерПары,
+	ДокументПроведениеЗанятия.ДатаЗанятия КАК ДатаЗанятия,
+	ДокументПроведениеЗанятия.КтоЗаменял КАК КтоЗаменял,
+	ДокументПроведениеЗанятия.Предмет КАК Предмет,
+	ДокументПроведениеЗанятия.Комментарий КАК Комментарий,
+	ДокументПроведениеЗанятия.КолвоЧасов КАК КолвоЧасов,
+	ДокументПроведениеЗанятия.УдаленноеЗанятие КАК УдаленноеЗанятие,
+	ДокументПроведениеЗанятия.СсылкаНаУдаленное КАК СсылкаНаУдаленное,
+	ДокументПроведениеЗанятия.СсылкаНаMoodle КАК СсылкаНаMoodle,
+	ДокументПроведениеЗанятия.СсылкаНаОблако КАК СсылкаНаОблако,
+	ДокументПроведениеЗанятия.ВторойПреподаватель КАК ВторойПреподаватель,
+	ДокументПроведениеЗанятия.РесурсНаМудле КАК РесурсНаМудле,
+	ДокументПроведениеЗанятия.ЭтоСовмещение КАК ЭтоСовмещение,
+	ДокументПроведениеЗанятия.ЭтоЗамена КАК ЭтоЗамена,
+	ДокументПроведениеЗанятия.ТекущиеОценки.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Студент КАК Студент,
+		Ст КАК Ст,
+		Оценка КАК Оценка,
+		О КАК О
+	) КАК ТекущиеОценки,
+	ДокументПроведениеЗанятия.МоментВремени КАК МоментВремени,
+	Расписание.Преподаватель КАК Преподаватель,
+	ДокументПроведениеЗанятия.ЭтоАттестация КАК ЭтоАттестация,
+	ДокументПроведениеЗанятия.ЕстьКомментарий КАК ЕстьКомментарий,
+	ДокументПроведениеЗанятия.ЕстьМатериалы КАК ЕстьМатериалы
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ПроведениеЗанятия КАК ДокументПроведениеЗанятия
+		ПО Расписание.СсылкаНаУрок = ДокументПроведениеЗанятия.Ссылка
+ГДЕ
+	ДокументПроведениеЗанятия.ПометкаУдаления = ЛОЖЬ</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Предмет</dcssch:dataPath>
+					<dcssch:field>Предмет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Проведен</dcssch:dataPath>
+					<dcssch:field>Проведен</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РесурсНаМудле</dcssch:dataPath>
+					<dcssch:field>РесурсНаМудле</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НазваниеПары</dcssch:dataPath>
+					<dcssch:field>НазваниеПары</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДЗ</dcssch:dataPath>
+					<dcssch:field>ДЗ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Тема</dcssch:dataPath>
+					<dcssch:field>Тема</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Группа</dcssch:dataPath>
+					<dcssch:field>Группа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерПары</dcssch:dataPath>
+					<dcssch:field>НомерПары</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаЗанятия</dcssch:dataPath>
+					<dcssch:field>ДатаЗанятия</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КтоЗаменял</dcssch:dataPath>
+					<dcssch:field>КтоЗаменял</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КолвоЧасов</dcssch:dataPath>
+					<dcssch:field>КолвоЧасов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УдаленноеЗанятие</dcssch:dataPath>
+					<dcssch:field>УдаленноеЗанятие</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекущиеОценки.Ст</dcssch:dataPath>
+					<dcssch:field>ТекущиеОценки.Ст</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СсылкаНаУдаленное</dcssch:dataPath>
+					<dcssch:field>СсылкаНаУдаленное</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СсылкаНаMoodle</dcssch:dataPath>
+					<dcssch:field>СсылкаНаMoodle</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СсылкаНаОблако</dcssch:dataPath>
+					<dcssch:field>СсылкаНаОблако</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВторойПреподаватель</dcssch:dataPath>
+					<dcssch:field>ВторойПреподаватель</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЭтоСовмещение</dcssch:dataPath>
+					<dcssch:field>ЭтоСовмещение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЭтоЗамена</dcssch:dataPath>
+					<dcssch:field>ЭтоЗамена</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекущиеОценки.Ссылка</dcssch:dataPath>
+					<dcssch:field>ТекущиеОценки.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекущиеОценки.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ТекущиеОценки.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ТекущиеОценки</dcssch:dataPath>
+					<dcssch:field>ТекущиеОценки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекущиеОценки.Студент</dcssch:dataPath>
+					<dcssch:field>ТекущиеОценки.Студент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекущиеОценки.Оценка</dcssch:dataPath>
+					<dcssch:field>ТекущиеОценки.Оценка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекущиеОценки.О</dcssch:dataPath>
+					<dcssch:field>ТекущиеОценки.О</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МоментВремени</dcssch:dataPath>
+					<dcssch:field>МоментВремени</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЭтоАттестация</dcssch:dataPath>
+					<dcssch:field>ЭтоАттестация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Преподаватель</dcssch:dataPath>
+					<dcssch:field>Преподаватель</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЕстьМатериалы</dcssch:dataPath>
+					<dcssch:field>ЕстьМатериалы</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЕстьКомментарий</dcssch:dataPath>
+					<dcssch:field>ЕстьКомментарий</dcssch:field>
+				</Field>
+				<MainTable>Document.ПроведениеЗанятия</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПометкаУдаления</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Реквизит1" id="2">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДатаЗанятия</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>НомерПары</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Группа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Предмет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>Тема</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>КолвоЧасов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>КтоЗаменял</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ЭтоАттестация</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+</Form>
