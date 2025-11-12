@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Popup name="ФормаГруппа1" id="4">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задачи</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.ActivateTask</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ФормаГруппа1РасширеннаяПодсказка" id="5"/>
+				<ChildItems>
+					<Button name="ФормаСоздатьРасписание" id="8" DisplayImportance="VeryHigh">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.СоздатьРасписание</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.ExecuteTask</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ФормаСоздатьРасписаниеРасширеннаяПодсказка" id="9"/>
+					</Button>
+					<Button name="ФормаСоздатьЗаметку" id="6">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.СоздатьЗаметку</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.Change</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ФормаСоздатьЗаметкуРасширеннаяПодсказка" id="7"/>
+					</Button>
+					<Popup name="ФормаГруппа3" id="30">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дополнительно</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаГруппа3РасширеннаяПодсказка" id="31"/>
+						<ChildItems>
+							<Button name="ФормаДобавитьКонсультацию" id="32">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьКонсультацию</CommandName>
+								<ExtendedTooltip name="ФормаДобавитьКонсультациюРасширеннаяПодсказка" id="33"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</Popup>
+			<Popup name="ФормаГруппа2" id="12">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчетность</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.Chart</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ФормаГруппа2РасширеннаяПодсказка" id="13"/>
+				<ChildItems>
+					<Button name="ФормаЖурнал" id="18">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.Журнал</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.DataCompositionConditionalAppearance</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ФормаЖурналРасширеннаяПодсказка" id="19"/>
+					</Button>
+					<Button name="ФормаСтатистика" id="20">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.Статистика</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.GroupConversation</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Статистика студентов</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаСтатистикаРасширеннаяПодсказка" id="21"/>
+					</Button>
+					<Button name="ФормаНагрузка" id="22">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.Нагрузка</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.DebitCredit</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выполнение нагрузки</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаНагрузкаРасширеннаяПодсказка" id="23"/>
+					</Button>
+					<Button name="ФормаСтатистикаПреподавателя" id="28">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.СтатистикаПреподавателя</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.ActiveUsers</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ФормаСтатистикаПреподавателяРасширеннаяПодсказка" id="29"/>
+					</Button>
+					<Button name="ФормаСписокЗамен" id="14">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СписокЗамен</CommandName>
+						<ExtendedTooltip name="ФормаСписокЗаменРасширеннаяПодсказка" id="15"/>
+					</Button>
+					<Button name="ФормаСписокСовмещений" id="16">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СписокСовмещений</CommandName>
+						<ExtendedTooltip name="ФормаСписокСовмещенийРасширеннаяПодсказка" id="17"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Button name="ФормаСменитьДату" id="24">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+				<CommandName>Form.Command.СменитьДату</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.MessageHistory</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаСменитьДатуРасширеннаяПодсказка" id="25"/>
+			</Button>
+			<Button name="ФормаУдалитьПомеченныеУроки" id="26">
+				<Type>CommandBarHyperlink</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.УдалитьПомеченныеУроки</CommandName>
+				<ExtendedTooltip name="ФормаУдалитьПомеченныеУрокиРасширеннаяПодсказка" id="27"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<SpreadSheetDocumentField name="РабочийСтол" id="1" DisplayImportance="Usual">
+			<DataPath>РабочийСтол</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<Protection>true</Protection>
+			<SelectionShowMode>DontShow</SelectionShowMode>
+			<PointerType>Regular</PointerType>
+			<ShowGroups>false</ShowGroups>
+			<EnableStartDrag>false</EnableStartDrag>
+			<EnableDrag>false</EnableDrag>
+			<BorderColor>#D4D4D4</BorderColor>
+			<ContextMenu name="РабочийСтолКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="РабочийСтолРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="URLProcessing">РабочийСтолОбработкаНавигационнойСсылки</Event>
+				<Event name="DetailProcessing">РабочийСтолОбработкаРасшифровки</Event>
+			</Events>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.СписокЗадач</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="РабочийСтол" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочий стол</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьЗаметку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заметку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заметку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьЗаметку</Action>
+		</Command>
+		<Command name="СоздатьРасписание" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать расписание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать расписание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьРасписание</Action>
+		</Command>
+		<Command name="ПровестиАттестацию" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести аттестацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести аттестацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПровестиАттестацию</Action>
+		</Command>
+		<Command name="СписокЗамен" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список замен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список замен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СписокЗамен</Action>
+		</Command>
+		<Command name="СписокСовмещений" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список совмещений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список совмещений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СписокСовмещений</Action>
+		</Command>
+		<Command name="Журнал" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Журнал</Action>
+		</Command>
+		<Command name="Статистика" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Статистика</Action>
+		</Command>
+		<Command name="Нагрузка" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нагрузка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нагрузка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Нагрузка</Action>
+		</Command>
+		<Command name="СменитьДату" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сменить дату</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сменить дату</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СменитьДату</Action>
+		</Command>
+		<Command name="УдалитьПомеченныеУроки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотр помеченных на удаление уроков</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить помеченные уроки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдалитьПомеченныеУроки</Action>
+		</Command>
+		<Command name="СтатистикаПреподавателя" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика преподавателя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика преподавателя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СтатистикаПреподавателя</Action>
+		</Command>
+		<Command name="ДобавитьКонсультацию" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить консультацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить консультацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьКонсультацию</Action>
+		</Command>
+		<Command name="Добавить" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</ToolTip>
+		</Command>
+	</Commands>
+</Form>

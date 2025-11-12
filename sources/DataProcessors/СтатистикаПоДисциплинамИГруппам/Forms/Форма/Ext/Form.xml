@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа4" id="21">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="22"/>
+			<ChildItems>
+				<InputField name="СтандартныйПериод" id="6">
+					<DataPath>СтандартныйПериод</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СтандартныйПериодКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="СтандартныйПериодРасширеннаяПодсказка" id="8"/>
+				</InputField>
+				<CheckBoxField name="УчитыватьПодгруппы" id="18">
+					<DataPath>УчитыватьПодгруппы</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьПодгруппыКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="УчитыватьПодгруппыРасширеннаяПодсказка" id="20"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа5" id="25">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<Button name="ПолучитьСтатистику" id="1">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПолучитьСтатистику</CommandName>
+					<ExtendedTooltip name="ПолучитьСтатистикуРасширеннаяПодсказка" id="2"/>
+				</Button>
+				<UsualGroup name="Группа6" id="27">
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<Button name="ФормаСформироватьСлужебкуДень" id="29">
+							<Type>Hyperlink</Type>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.СлужебкаЗаДень</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сформировать служебку за день</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаСформироватьСлужебкуДеньРасширеннаяПодсказка" id="30"/>
+						</Button>
+						<Button name="ФормаСформироватьСлужебку" id="23">
+							<Type>Hyperlink</Type>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.СформироватьСлужебку</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сформировать служебку за месяц</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаСформироватьСлужебкуРасширеннаяПодсказка" id="24"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Группа1" id="12">
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="13"/>
+			<ChildItems>
+				<Page name="Группа2" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Посещаемость</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="15"/>
+					<ChildItems>
+						<SpreadSheetDocumentField name="Статистика" id="3">
+							<DataPath>Статистика</DataPath>
+							<ContextMenu name="СтатистикаКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="СтатистикаРасширеннаяПодсказка" id="5"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+				<Page name="Группа3" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Успеваемость</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="17"/>
+					<ChildItems>
+						<SpreadSheetDocumentField name="СтатистикаУ" id="9">
+							<DataPath>СтатистикаУ</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статистика</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СтатистикаУКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="СтатистикаУРасширеннаяПодсказка" id="11"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.СтатистикаПоДисциплинамИГруппам</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Статистика" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтандартныйПериод" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стандартный период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатистикаУ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика У</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатистикаО" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика О</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УчитыватьПодгруппы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учитывать подгруппы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПолучитьСтатистику" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить статистику</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить статистику</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьСтатистику</Action>
+		</Command>
+		<Command name="СформироватьСлужебку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать служебку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать служебку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьСлужебку</Action>
+		</Command>
+		<Command name="СлужебкаЗаДень" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Служебка за день</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Служебка за день</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СлужебкаЗаДень</Action>
+		</Command>
+	</Commands>
+</Form>
