@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Subsystem uuid="9b2b3e05-8903-427d-bc6d-189e0da2aeb6">
+		<Properties>
+			<Name>УчебныйПроцесс</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учебный процесс</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>true</IncludeInCommandInterface>
+			<UseOneCommand>false</UseOneCommand>
+			<Explanation/>
+			<Picture>
+				<xr:Ref>CommonPicture.ОбщаяКартинка1</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ПроведениеЗанятия</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ФормированиеДневногоРасписания</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ПроведениеАттестации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ДобавитьКонсультацию</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.Консультации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.Замены</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.Занятия</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.Аттестация</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ДопЗанятия</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.Расписание</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.СозданиеЗаметки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.Сдвоенные</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.РаботаСДипломниками</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.ОтобразитьРегистры</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.Регистры</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ИндивидуальныеНастройкиГрупп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ГрафикиУчебногоПроцесса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ФормированиеГрафиковУчебногоПроцесса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ВремяОбновления</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.Настройки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.СтатистикаРаботыПреподавателя</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>
