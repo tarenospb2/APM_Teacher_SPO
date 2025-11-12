@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Параметр</dataPath>
+			<field>Параметр</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметр</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Значение</dataPath>
+			<field>Значение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	"Часов по тарификации" КАК Параметр,
+	ЕСТЬNULL(СУММА(Расписание.КолвоЧасов),0) КАК Значение
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.Замена = ЛОЖЬ
+	И Расписание.ЗаменяющийПреподаватель = &amp;Препод
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Часов по замене",
+	ЕСТЬNULL(СУММА(Расписание.КолвоЧасов),0)
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.Замена = ИСТИНА
+	И Расписание.ЗаменяющийПреподаватель = &amp;Препод
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Часов по совмещению",
+	ЕСТЬNULL(СУММА(Расписание.КолвоЧасов),0)
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.ЗаменяющийПреподаватель = &amp;Препод
+	И Расписание.Совмещение = ИСТИНА
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Часов, проведенных другими преподавателями",
+	ЕСТЬNULL(СУММА(Расписание.КолвоЧасов),0)
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.ЗаменяющийПреподаватель &lt;&gt; &amp;Препод
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Отработано дней",
+	ЕСТЬNULL(КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Расписание.Период),0)
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.ЗаменяющийПреподаватель = &amp;Препод
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Проведено 5-х пар",
+	ЕСТЬNULL(КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Расписание.СсылкаНаУрок),0)
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.ЗаменяющийПреподаватель = &amp;Препод
+	И Расписание.НомерПары = 5
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Количество рабочих суббот",
+	ЕСТЬNULL(КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Расписание.Период),0)
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.ЗаменяющийПреподаватель = &amp;Препод
+	И ДЕНЬНЕДЕЛИ(Расписание.Период) = 6
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Часов, проведенных удаленно",
+	ЕСТЬNULL(СУММА(Расписание.КолвоЧасов),0)
+ИЗ
+	РегистрСведений.Расписание КАК Расписание
+ГДЕ
+	Расписание.Преподаватель = &amp;Преподаватель
+	И Расписание.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И Расписание.ЗанятиеПроведено = ИСТИНА
+	И Расписание.ЗаменяющийПреподаватель = &amp;Препод
+	И Расписание.СсылкаНаУрок.УдаленноеЗанятие = ИСТИНА</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>КонецПериода(&amp;КонецПериода, "День")</expression>
+	</parameter>
+	<parameter>
+		<name>Преподаватель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Преподаватель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Преподаватели</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>РаботаССеансом.ПолучитьТекПользователя()</expression>
+	</parameter>
+	<parameter>
+		<name>Препод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Препод</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Преподаватели</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Преподаватели.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:FieldBackColor</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Статистика работы преподавателя с </v8:content>
+							</v8:item>
+						</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Нач</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content> по </v8:content>
+							</v8:item>
+						</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Кон</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:FieldBackColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="12" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:FieldBackColor</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Преподаватель: </v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Преп</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:FieldBackColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="10" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Нач</dcsat:name>
+			<dcsat:expression>ПараметрыДанных.НачалоПериода</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Кон</dcsat:name>
+			<dcsat:expression>ПараметрыДанных.КонецПериода</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Преп</dcsat:name>
+			<dcsat:expression>Представление(ПараметрыДанных.Преподаватель)</dcsat:expression>
+		</parameter>
+	</template>
+	<groupTemplate>
+		<groupName>Заг</groupName>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupTemplate>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Параметр</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Значение</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>74ca3bac-2ddf-4314-bfec-f29dde66faa2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>18ff2931-0c4e-4a0d-aafc-5e08c2dce2c8</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Препод</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Преподаватели.ПустаяСсылка</dcscor:value>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Заг</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВариантИспользованияГруппировки</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionGroupUseVariant">AdditionalInformation</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
